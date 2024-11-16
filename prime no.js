@@ -1,22 +1,18 @@
 function isPrime(number) {
-    if (number < 2) return false; // Numbers less than 2 are not prime
+    if (number < 2) return false; 
     for (let i = 2; i <= Math.sqrt(number); i++) {
         if (number % i === 0) {
-            return false; // Divisible by other numbers, not prime
+            return false;
         }
     }
-    return true; // Number is prime
+    return true; 
 }
 
-function showPrimes(limit) {
-    console.log(`Prime numbers up to ${limit}:`);
-    for (let i = 2; i <= limit; i++) {
-        if (isPrime(i)) {
-            console.log(i); // Print the prime number
-        }
-    }
+function FindPrimenoInArray(arr) {
+    return arr.filter(isPrime)
 }
 
-// Example: Show prime numbers up to 50
-let limit = 50;
-showPrimes(limit);
+const numbers = [2,4,6,8,45,36,33,86,56,90,87,23,21,48]
+const primes = FindPrimenoInArray(numbers)
+
+console.log("Prime numbers in the Array", primes)            
